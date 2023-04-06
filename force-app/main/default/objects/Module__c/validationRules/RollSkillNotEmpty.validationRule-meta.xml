@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RollSkillNotEmpty</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Skills__c, &quot;&quot;) ||  ISBLANK(Rolls__c)</errorConditionFormula>
+    <errorMessage>Neither Rolls or Skills should be empty</errorMessage>
+</ValidationRule>

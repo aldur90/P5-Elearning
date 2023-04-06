@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Obtained_Points__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Tries__c, 0, 0, 1, Unit__r.Points__c, 2, Unit__r.Points__c * 0.5,Unit__r.Points__c * 0.25)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Obtained Points</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

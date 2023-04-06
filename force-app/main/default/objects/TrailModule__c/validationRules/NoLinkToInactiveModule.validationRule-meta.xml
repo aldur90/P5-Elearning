@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NoLinkToInactiveModule</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(Module__r.Active__c)</errorConditionFormula>
+    <errorMessage>No se debe permitir vincular un Módulo inactivo a un Trail</errorMessage>
+</ValidationRule>
