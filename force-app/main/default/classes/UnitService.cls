@@ -75,12 +75,21 @@ public with sharing class UnitService {
 insert questionAnswers;
 unitHistory.Status__c = 'Answered';
 update unitHistory;
-verify = true;
+
+Unit_History__c unitHist = [
+    SELECT Unit_Completed__c
+    FROM Unit_History__c
+    WHERE Id =: unitHistory.Id
+];
+
+verify = unitHist.Unit_Completed__c;
+
 } catch (Exception e) {
     Database.rollback(savepoint);
     throw e;
   }
   return verify;
+  //return unitHistory.Unit_Completed__c;
 }
 
 
@@ -214,23 +223,51 @@ verify = true;
         public Unit__c unit;
         @AuraEnabled
         public List<Question__c> questions;
+        @AuraEnabled
+        public Boolean completed;
         
-        public UnitWrapper(Unit__c unit, List<Question__c> questions){
+        public UnitWrapper(Unit__c unit, List<Question__c> questions, Boolean completed){
             this.unit = unit;
             this.questions = questions;
+            this.completed = completed;
         }
     }
     
     @AuraEnabled(cacheable=true)
     public static UnitWrapper getUnit(Id unitId){
-        Unit__c unit = [SELECT Id, Name, Time_Estimate__c, Points__c FROM Unit__c WHERE Id =: unitId ];
+        Unit__c unit = [SELECT Id, Name, Time_Estimate__c, Points__c,
+                        ( SELECT Unit_Completed__c,  
+                        TriesNumber__c 
+                        FROM Unit_Responses__r 
+                        WHERE Module_History__r.User__c = :UserInfo.getUserId() 
+                        AND Unit__c =: unitId                 
+                        ORDER BY TriesNumber__c 
+                        DESC LIMIT 1)
+                        FROM Unit__c 
+                        WHERE Id =: unitId ];
+
+        Boolean completed = false;               
+
+        Unit__c unitAux = new Unit__c(Id = unit.Id, Name = unit.Name, 
+                                    Time_Estimate__c = unit.Time_Estimate__c, 
+                                    Points__c = unit.Points__c                             
+
+                                    );
+        if(!unit.Unit_Responses__r.isEmpty()){
+            if(unit.Unit_Responses__r[0].Unit_Completed__c){
+                completed = true;
+            }     
+        }
         
         List<Question__c> questions = [SELECT Id, Name, Content__c,(SELECT Id, Name, Description__c, IsCorrect__c FROM Options__r)
                                       FROM Question__c
                                       WHERE Unit__c =: unitId
                                       ];
         
-        return new UnitWrapper(unit, questions);
+        return new UnitWrapper(unitAux, questions, completed);
     }
 
 }
+
+ 
+                

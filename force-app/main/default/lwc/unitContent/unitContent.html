@@ -20,6 +20,14 @@
     </lightning-card>
 	-->
 
+	<template if:true={isCompletedUnit}>
+		<lightning-card>
+        <div class="slds-align_absolute-center slds-scrollable_y">You have completed this unit</div>
+	</lightning-card>
+	</template>
+
+	<template if:false={isCompletedUnit}>
+	
 	<lightning-card>
 		<template for:each={questions} for:item="question">
 			<div key={question.Id}>
@@ -33,4 +41,5 @@
 		<lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
 	</lightning-card>
 
+	</template>
 </template>

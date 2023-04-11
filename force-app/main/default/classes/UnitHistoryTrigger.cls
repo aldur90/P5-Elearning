@@ -43,6 +43,14 @@ public static void validateAnswer (List<Unit_History__c> filterList){
             }
             if(count == unitHistoryMap.get(unitHistory.Id).Question_Answer__r.size()){
                 unitHistory.Status__C = 'Success';
+                unitHistory.Unit_Completed__c = true;
+                if(unitHistory.TriesNumber__c == 1){
+                    unitHistory.Points__c = unitHistoryMap.get(unitHistory.id).Unit__r.Points__c;
+                }else if(unitHistory.TriesNumber__c == 2){
+                    unitHistory.Points__c = unitHistoryMap.get(unitHistory.id).Unit__r.Points__c/2;
+                }else{
+                    unitHistory.Points__c = unitHistoryMap.get(unitHistory.id).Unit__r.Points__c/4;
+                }
             }else{
                 unitHistory.Status__C = 'Fail';
             }
