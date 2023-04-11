@@ -7,8 +7,15 @@
         </div> -->
 
         <div class="tds-content-panel slds-text-body_small tds-color_meteorite slds-is-relative slds-wrap" style="border-top-color: rgb(27, 76, 128);">
-        <lightning-accordion allow-multiple-sections-open style="margin-left: 20%; margin-right: 20%;">
-            <lightning-icon if:true={successModule} icon-name="utility:success" variant="Success" size="small"></lightning-icon>
+            
+            <table style="margin-left: 10%; margin-right: 30%;">
+                <tr>
+                    <td width="10%" style="vertical-align:top; text-align: right;">
+            <lightning-icon if:true={successModule} icon-name="utility:success" variant="Success" size="small" style="margin-left: 20%; margin-right: 20%;"></lightning-icon>
+                    </td>
+                    <td width="90%">
+            <lightning-accordion allow-multiple-sections-open style="margin-right: 30%;">
+            
             <lightning-accordion-section name={module.Name} label={module.Name}>
                 
                 <div class="slds-m-bottom_small slds-text-align--right">
@@ -26,6 +33,10 @@
                 </lightning-card>
             </lightning-accordion-section>
         </lightning-accordion>
+    </td>
+        
+</tr>
+</table>
     </div> 
 
 
