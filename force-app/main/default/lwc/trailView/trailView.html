@@ -1,0 +1,32 @@
+<template>
+    <lightning-card class="trail-card" > 
+        <div class="pad"> 
+        <div class="slds-m-bottom_small slds-text-align--right">
+            <span class="tds-badge slds-badge">{points} Points </span>                       
+        </div>
+
+        <h3 class="tds-color_black slds-text-heading_large slds-hyphenate tds-text_bold slds-m-bottom_xx-small">
+            <lightning-icon icon-name="standard:knowledge" size="small"></lightning-icon>{name}
+        </h3>
+        <p>{description}</p>
+
+        <div class=" slds-text-align--right slds-text-title_bold">
+            ~{time} minutes
+    </div>
+</div>
+        
+        
+        
+          
+
+    <h3>
+        <lightning-icon icon-name="standard:app" size="small"></lightning-icon>
+        Modules
+    </h3> 
+
+    <template for:each={modules} for:item="mod">    
+        <c-module-view key ={mod.Id} checkunit ={checkunit} checkmodule={checkmodule} name={mod.Name} time={mod.Total_Time_Estimate__c} points={mod.Points__c} description={mod.Description__c} module={mod}> </c-module-view>   
+    </template>
+
+</lightning-card>
+</template>

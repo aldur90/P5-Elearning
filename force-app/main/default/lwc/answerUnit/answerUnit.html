@@ -1,0 +1,12 @@
+<template>
+    <lightning-layout multiple-rows >
+        <lightning-layout-item size="12" class="slds-p-around_xx-small">
+        <p class={tileClass}><input type="radio" id={question} name={question.Name} onclick={handleClick} style="margin-right: 5px;" >
+        {answer.Description__c}</p><br/>
+
+        <!--
+        <p onclick={handleClick} class={tileClass}>{answer.Description__c}</p><br/>
+        -->
+    </lightning-layout-item>
+</lightning-layout>
+</template>

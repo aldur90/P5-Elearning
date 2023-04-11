@@ -1,0 +1,36 @@
+<template>
+	<!-- aqui 
+    <lightning-card>
+            <template for:each={questions} for:item="question">
+
+                <div key={question.Id}>
+                <h1>
+                        <lightning-icon icon-name="action:new_note" size="small" padding="around-small"></lightning-icon>&nbsp;{question.Content__c}&emsp;
+                </h1>
+                    
+                
+
+                <template for:each={question.Options__r} for:item="option">
+
+                    <c-answer-unit key={option.Id} answer={option} question={question} onoptionselect ={answerSelected} option-selected={optionSelected}></c-answer-unit>
+                </template>
+            </div>
+            </template>
+            <lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+    </lightning-card>
+	-->
+
+	<lightning-card>
+		<template for:each={questions} for:item="question">
+			<div key={question.Id}>
+				<h1>
+					<lightning-icon icon-name="action:new_note" size="small" padding="around-small"></lightning-icon>
+					&nbsp;{question.Content__c}&emsp;
+				</h1>
+				<c-option-unit question-id={question.Id} options={question.Options__r}></c-option-unit>
+			</div>
+		</template>
+		<lightning-button label="Submit" onclick={handleSubmit}></lightning-button>
+	</lightning-card>
+
+</template>

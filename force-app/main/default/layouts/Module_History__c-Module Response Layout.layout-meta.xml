@@ -73,7 +73,7 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
-        <relatedList>Unit_History__c.Module_Response__c</relatedList>
+        <relatedList>Unit_History__c.Module_History__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>

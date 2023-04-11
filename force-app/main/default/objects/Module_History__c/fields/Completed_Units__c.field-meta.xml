@@ -3,7 +3,7 @@
     <fullName>Completed_Units__c</fullName>
     <externalId>false</externalId>
     <label>Completed Units</label>
-    <summaryForeignKey>Unit_History__c.Module_Response__c</summaryForeignKey>
+    <summaryForeignKey>Unit_History__c.Module_History__c</summaryForeignKey>
     <summaryOperation>count</summaryOperation>
     <trackTrending>false</trackTrending>
     <type>Summary</type>

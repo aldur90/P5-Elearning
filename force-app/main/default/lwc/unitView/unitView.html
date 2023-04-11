@@ -1,0 +1,53 @@
+<template>
+    
+    
+    <table width="100%">
+        <tr>
+        <td width="75%">
+            <lightning-card  onclick={ViewUnit} data-prop={unit.Id} variant="Narrow" if:true={unit} title={unit.Name} icon-name="standard:record"></lightning-card>
+        </td>
+        <td width="15%">
+            <div class="slds-m-bottom_small slds-text-align--right">
+                <span class="tds-badge slds-badge slds-grid_vertical-align-right">+{unit.Points__c} Points </span>
+            </div>
+        </td>
+        <td width="20%">
+            <div class="slds-text-align--right slds-text-title_bold">
+                ~{unit.Time_Estimate__c} min
+            </div>
+        </td>
+        
+        </tr>
+      </table>
+    <!--
+    
+    <lightning-card  onclick={ViewUnit} data-prop={unit.Id} variant="Narrow" if:true={unit} title={unit.Name} icon-name="standard:record">
+
+        <div class="slds-m-bottom_small slds-text-align--right">
+            <span class="tds-badge slds-badge slds-grid_vertical-align-right">+{unit.Points__c} Points </span>
+        </div>
+        
+        <div class="slds-text-align--right slds-text-title_bold">
+            ~{unit.Time_Estimate__c} minutes
+        </div>
+
+          <a  title={unit.Name} onclick={ViewUnitLink} data-record-id={unit.Id}></a>
+            
+            <div>
+            <lightning-button label="View Units" slot="actions" onclick={ViewUnit} data-prop={unit.Id} ></lightning-button>
+        </div>
+
+        <div>
+           <div class="slds-p-left_medium slds-shrink-none slds-m-vertical_small slds-align-content-center slds-text-align_right">    
+                <lightning-icon if:true={successUnit} icon-name="utility:success" variant="Success" size="medium"></lightning-icon>
+            </div>          
+        </div>
+
+    </lightning-card> --> 
+
+
+    <!--<div>
+        {unit.Name} / {unit.Points__c} / {unit.Time_Estimate__c}
+        <lightning-button label="View Units" slot="actions" onclick={ViewUnit} data-prop={unit.Id} ></lightning-button>
+    </div>-->
+</template>

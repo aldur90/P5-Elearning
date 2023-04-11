@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Module_Response__c</fullName>
+    <fullName>Module_History__c</fullName>
     <externalId>false</externalId>
-    <label>Module Response</label>
+    <label>Module History</label>
     <referenceTo>Module_History__c</referenceTo>
+    <relationshipLabel>Unit History</relationshipLabel>
     <relationshipName>Unit_Responses</relationshipName>
     <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>

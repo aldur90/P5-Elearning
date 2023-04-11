@@ -17,7 +17,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Module_Response__c</field>
+                <field>Module_History__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -30,6 +30,14 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Tries__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>TriesNumber__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>

@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <label>Total Points</label>
     <summarizedField>Unit_History__c.Points__c</summarizedField>
-    <summaryForeignKey>Unit_History__c.Module_Response__c</summaryForeignKey>
+    <summaryForeignKey>Unit_History__c.Module_History__c</summaryForeignKey>
     <summaryOperation>sum</summaryOperation>
     <trackTrending>false</trackTrending>
     <type>Summary</type>
