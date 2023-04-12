@@ -26,7 +26,8 @@ public class TrailWrapper {
                                                   SELECT Name, 
                                                   Description__c, 
                                                   Points__c,
-                                                  Time_Estimated__c
+                                                  Time_Estimated__c,
+                                                  UnitQuantity__c
                                                   FROM Trail__c 
                                                   WHERE Id =: trailId
                                                   

@@ -13,13 +13,25 @@
         <div class=" slds-text-align--right slds-text-title_bold">
             ~{time} minutes
     </div>
+    <div class=" slds-text-align--right slds-text-title_bold">{progress}%
+        <table width="20%" class=" slds-text-align--right">
+            <tr>
+                <td>
+        <lightning-progress-bar width="20%" class="slds-text-align--right" value={progress} size="large"></lightning-progress-bar>
+                </td>
+            </tr>
+        </table>
+
+    </div>
 </div>
         
         
         
           
 
-    <h3>
+    <h3 style="margin-left: 20%;
+    font-size: 20px;
+    font-weight: bold;">
         <lightning-icon icon-name="standard:app" size="small"></lightning-icon>
         Modules
     </h3> 

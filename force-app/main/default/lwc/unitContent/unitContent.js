@@ -25,7 +25,6 @@ export default class UnitContent extends LightningElement {
             this.points = data.unit.Points__c;
             this.time = data.unit.Time_Estimate__c;
             this.isCompletedUnit = data.completed;
-            //data.unit.Unit_Responses__r[0].Unit_Completed__c;
             console.log('Unidad Completada ' + this.isCompletedUnit);
 
         }   else if (error) {
@@ -76,11 +75,7 @@ export default class UnitContent extends LightningElement {
                 this.showErrorToast();
                 
             }
-            //if(this.isCompletedUnit){
-            //    this.showSuccessToast();
-            //}else{
-             //   showErrorToast();
-            //}
+            
 		})
         .catch((error)=>{
 			console.log('has an error');
@@ -92,8 +87,8 @@ export default class UnitContent extends LightningElement {
 
     showErrorToast() {
         const evt = new ShowToastEvent({
-            title: 'Fail',
-            message: 'Some unexpected error',
+            title: 'Do it again',
+            message: 'Your answer was incorrect',
             variant: 'error',
             mode: 'dismissable'
         });
@@ -102,8 +97,8 @@ export default class UnitContent extends LightningElement {
     
     showSuccessToast() {
         const evt = new ShowToastEvent({
-            title: 'Toast Success',
-            message: 'Opearion sucessful',
+            title: 'Congratulations',
+            message: 'Your answer was correct',
             variant: 'success',
             mode: 'dismissable'
         });
