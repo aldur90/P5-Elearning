@@ -23,10 +23,8 @@ export default class TrailView extends LightningElement {
             this.time = data.trail.Time_Estimated__c;
             this.description = data.trail.Description__c;
             this.points = data.trail.Points__c;
-            // Hay que crear algun campo en trail que cuente la cantidad total de unidades
-            //this.progress = 0;
-            this.progress = Math.round(data.passedUnitIds.length/data.trail.UnitQuantity__c)*100;
-            console.log('Passed Units ' + data.passedUnitIds.length + 'Cantidad de unidades ' + data.trail.UnitQuantity__c);
+            this.progress = Math.round(data.passedUnitIds.length/data.trail.UnitQuantity__c*100);
+            console.log('Passed Units ' + data.passedUnitIds.length + 'Cantidad de unidades ' + data.trail.UnitQuantity__c + ' ' + this.progress);
             this.modules = data.modules;
             this.checkmodule = data.passedModuleIds;
             this.checkunit = data.passedUnitIds;

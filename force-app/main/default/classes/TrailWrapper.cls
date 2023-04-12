@@ -11,7 +11,7 @@ public class TrailWrapper {
     @AuraEnabled
     public Integer progressTrail {get; set;}
 
-    //private Id trailId;
+    
 
     public TrailWrapper(Trail__c trail, List<Module__c> modules, Set<Id> passedModuleIds, Set<Id> passedUnitIds) {
         this.trail = trail;
